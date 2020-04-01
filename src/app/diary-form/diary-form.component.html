@@ -1,0 +1,21 @@
+<div class = "container-fluid">
+    <h2 class = "text-center">New Diary Entry</h2>
+    <hr>
+
+    <form (ngSubmit)='submitDiary()' #diaryForm = 'ngForm'>
+        <div class = "form-group">
+            <label for = "name">Enter/Select the Date Today</label>
+            <input type="date" required class="form-control" id="date"  name="date">
+
+        </div>
+
+        <div class = "form-group">
+
+            <label for ="text">Enter text here</label>
+            <textarea class ="form-control" id = "description" rows ="4" required ></textarea>
+        </div>
+
+        <button class = "btn btn-outline-success">LOAD TO DIARY</button>
+    </form>
+
+</div>

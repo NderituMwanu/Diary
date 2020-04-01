@@ -1,0 +1,27 @@
+<div class="container">
+    
+    
+
+    <div class = "col-md-6">
+        <app-diary-form (addDiary)="addNewDiary($event)"></app-diary-form>
+    </div>
+
+    <h1>EVENTS:</h1>
+    <div class="row">
+        <div class="col-md-6">
+
+            
+
+            <hr>
+            <ul>
+                <li *ngFor="let diary of diary; let i = index">
+                    <p appHighlight>{{diary.text|uppercase}}</p>
+                    <button class="btn btn-outline-success" (click)='toggleDetails(i)'>EVENT DETAILS:</button>
+                    <app-diary-detail *ngIf='diary.showDescription' [diary]='diary'
+                        (isComplete)='completeDiary($event, i)'></app-diary-detail>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+</div>
